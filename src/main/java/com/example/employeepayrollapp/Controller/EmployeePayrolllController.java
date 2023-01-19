@@ -3,6 +3,7 @@ import com.example.employeepayrollapp.DTO.EmployeePayrollDTO;
 import com.example.employeepayrollapp.DTO.ResponseDTO;
 import com.example.employeepayrollapp.Model.EmployeePayrollData;
 import com.example.employeepayrollapp.Service.IEmployeePayrollService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,7 +30,7 @@ public class EmployeePayrolllController {
         return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
  }
  @PostMapping("/create")
-     public ResponseEntity<ResponseDTO> addEmployeePayrollData(@RequestBody EmployeePayrollDTO employeePayrollDTO) {
+     public ResponseEntity<ResponseDTO> createEmployeePayrollData(@Valid @RequestBody EmployeePayrollDTO employeePayrollDTO) {
          EmployeePayrollData empData = null;
          empData = iEmployeePayrollService.createEmployeePayrollData(employeePayrollDTO);
          ResponseDTO responseDTO = new ResponseDTO("Created Employee Payroll Data Successfully", empData);
@@ -37,7 +38,7 @@ public class EmployeePayrolllController {
  }
 
  @PutMapping("update/{empId}")
-  public ResponseEntity<ResponseDTO> updateEmployeePayrollData(@PathVariable("empId") int empId,@RequestBody EmployeePayrollDTO employeePayrollDTO) {
+  public ResponseEntity<ResponseDTO> updateEmployeePayrollData(@Valid @PathVariable("empId") int empId,@RequestBody EmployeePayrollDTO employeePayrollDTO) {
     EmployeePayrollData empData = null;
     empData = iEmployeePayrollService.updateEmployeePayrollData(empId, employeePayrollDTO);
     ResponseDTO responseDTO = new ResponseDTO("Updated Employee Payroll Data sucessfully: " , empData);
