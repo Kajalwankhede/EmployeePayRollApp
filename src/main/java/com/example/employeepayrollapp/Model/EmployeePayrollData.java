@@ -18,12 +18,12 @@ private String department;
 }
 public EmployeePayrollData(int employeeId, EmployeePayrollDTO employeePayrollDTO) {
      this.employeeId = employeeId;
-     this.name = employeePayrollDTO.getName();
-     this.salary = employeePayrollDTO.getSalary();
-     this.imagePath = employeePayrollDTO.getImagePath();
-     this.gender = employeePayrollDTO.getGender();
-     this.department = employeePayrollDTO.getDepartment();
-     this.notes = employeePayrollDTO.getNotes();
+     this.name = employeePayrollDTO.name;
+     this.salary = employeePayrollDTO.salary;
+     this.imagePath = employeePayrollDTO.imagePath;
+     this.gender = employeePayrollDTO.gender;
+     this.department = employeePayrollDTO.department;
+     this.notes = employeePayrollDTO.notes;
  }
 @Override
     public String toString() {

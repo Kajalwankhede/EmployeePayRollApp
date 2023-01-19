@@ -3,19 +3,21 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
-public @Data class EmployeePayrollDTO {
+import lombok.ToString;
+
+public @ToString class EmployeePayrollDTO {
     @Pattern(regexp = "^[A-Z]{1}[a-zA-Z\\s]{2,}$", message = "Invalid Employee Name")
-    private String name;
+    public String name;
     @Pattern(regexp = "^(male|female)$", message = "Invalid Employee Name")
-    private String gender;
+    public String gender;
     @Min(value = 500,message = "Minimum wage should be more than 500")
-    private long salary;
-    private String imagePath;
+    public long salary;
+    public String imagePath;
     @NotEmpty
-    private String startDate;
-    private String notes;
-    private String department;
-    private int employeeId;
+    public String startDate;
+    public String notes;
+    public String department;
+    public int employeeId;
 public EmployeePayrollDTO(String name, String gender, long salary, String imagePath, String startDate, String notes,
                               String department, int employeeId) {
     super();
