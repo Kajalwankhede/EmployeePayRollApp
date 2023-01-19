@@ -1,7 +1,6 @@
 package com.example.employeepayrollapp.DTO;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Pattern;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.validation.constraints.*;
 import lombok.Data;
 import lombok.ToString;
 
@@ -12,10 +11,15 @@ public @ToString class EmployeePayrollDTO {
     public String gender;
     @Min(value = 500,message = "Minimum wage should be more than 500")
     public long salary;
+    @NotBlank(message = "Imagepath cannot be empty")
     public String imagePath;
-    @NotEmpty
+
+    @JsonFormat(pattern = "dd-MM-yyyy")
+    @NotNull(message = "start date should not be empty")
     public String startDate;
+    @NotBlank(message = "Note cannot be empty")
     public String notes;
+    @NotBlank(message = "Department cannot be empty")
     public String department;
     public int employeeId;
 
