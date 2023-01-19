@@ -7,9 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-
 @RestController
 @RequestMapping("/employeepayrollservice")
 public class EmployeePayrolllController {
@@ -38,18 +36,19 @@ public class EmployeePayrolllController {
          return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
  }
 
- @PutMapping("update")
-  public ResponseEntity<ResponseDTO> updateEmployeePayrollData(@RequestBody EmployeePayrollDTO employeePayrollDTO) {
+ @PutMapping("update/{empId}")
+  public ResponseEntity<ResponseDTO> updateEmployeePayrollData(@PathVariable("empId") int empId,@RequestBody EmployeePayrollDTO employeePayrollDTO) {
     EmployeePayrollData empData = null;
-    empData = new EmployeePayrollData(1, employeePayrollDTO);
-    ResponseDTO responseDTO = new ResponseDTO("Updated Employee Payroll Data for: " , empData);
+    empData = iEmployeePayrollService.updateEmployeePayrollData(empId, employeePayrollDTO);
+    ResponseDTO responseDTO = new ResponseDTO("Updated Employee Payroll Data sucessfully: " , empData);
      return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
  }
 
 
  @DeleteMapping("/delete/{empId}")
  public ResponseEntity<ResponseDTO> deleteEmployeePayrollData(@PathVariable("empId") int empId) {
-         ResponseDTO responseDTO = new ResponseDTO("Delete call success for Id: " , empId);
+     iEmployeePayrollService.deleteEmployeePayrollDTO(empId);
+     ResponseDTO responseDTO=new ResponseDTO("Delete call sucess for Id: ",empId);
          return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 
      }

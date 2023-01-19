@@ -9,6 +9,7 @@ public EmployeePayrollDTO(String name, int salary) {
 }
   @Override
    public String toString() {
-        return "EmployeePayrollDTO [name=" + name + ", salary=" + salary + "]";
+
+    return "EmployeePayrollDTO [name=" + name + ", salary=" + salary + "]";
     }
 }

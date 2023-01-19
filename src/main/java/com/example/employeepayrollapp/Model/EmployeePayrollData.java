@@ -1,7 +1,11 @@
 package com.example.employeepayrollapp.Model;
 import com.example.employeepayrollapp.DTO.EmployeePayrollDTO;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
+@Entity
 public class EmployeePayrollData {
+    @Id
  private int employeeId;
   private String name;
   private long salary;
