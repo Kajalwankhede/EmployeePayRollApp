@@ -14,11 +14,20 @@ import java.util.stream.Collectors;
 @ControllerAdvice
 public class EmployeePayrollExceptionHandler {
  @ExceptionHandler(MethodArgumentNotValidException.class)
- public ResponseEntity<ResponseDTO> handleMethodArguementNotValidException(MethodArgumentNotValidException exception){
-     List<ObjectError> errorList = exception.getBindingResult().getAllErrors();
-     List<String> errorMessage = errorList.stream().map(objErr -> objErr.getDefaultMessage())
+ public ResponseEntity<ResponseDTO> handleMethodArguementNotValidException(
+         MethodArgumentNotValidException exception){
+    List<ObjectError> errorList = exception.getBindingResult().getAllErrors();
+     List<String> errorMessage = errorList.stream()
+             .map(objErr -> objErr.getDefaultMessage())
              .collect(Collectors.toList());
      ResponseDTO responseDTO = new ResponseDTO("Exception while processing REST request", errorMessage);
+     return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.BAD_REQUEST);
+ }
+
+    @ExceptionHandler(EmployeePayrollException.class)
+    public ResponseEntity<ResponseDTO> handleEmployeePayrollException(EmployeePayrollException exception) {
+        ResponseDTO responseDTO = new ResponseDTO("Exception while processing REST request", exception.getMessage());
         return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.BAD_REQUEST);
-    }
+
+}
 }
