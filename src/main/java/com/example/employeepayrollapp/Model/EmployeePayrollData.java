@@ -1,10 +1,15 @@
 package com.example.employeepayrollapp.Model;
 import com.example.employeepayrollapp.DTO.EmployeePayrollDTO;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
-
+@Entity
+@Table(name = "employee_payroll")
 public @Data class EmployeePayrollData {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "employee_id")
+    private int employeeId;
+    @Column(name = "Name")
 private String name;
  private String gender;
 private long salary;
@@ -12,8 +17,7 @@ private String imagePath;
 private String startDate;
 private String notes;
 private String department;
- private int employeeId;
- public EmployeePayrollData() {
+public EmployeePayrollData() {
 
 }
 public EmployeePayrollData(int employeeId, EmployeePayrollDTO employeePayrollDTO) {

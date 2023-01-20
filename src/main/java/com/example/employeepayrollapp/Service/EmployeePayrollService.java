@@ -2,11 +2,15 @@ package com.example.employeepayrollapp.Service;
 import com.example.employeepayrollapp.DTO.EmployeePayrollDTO;
 import com.example.employeepayrollapp.Exception.EmployeePayrollException;
 import com.example.employeepayrollapp.Model.EmployeePayrollData;
+import com.example.employeepayrollapp.Repository.EmployeePayrollRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 @Service
 public class EmployeePayrollService implements IEmployeePayrollService {
+    @Autowired
+    private EmployeePayrollRepository employeePayrollRepository;
     private List<EmployeePayrollData>empPayrollList=new ArrayList<>();
  @Override
     public List<EmployeePayrollData> getEmployeePayrollData() {
@@ -23,8 +27,9 @@ public class EmployeePayrollService implements IEmployeePayrollService {
     public EmployeePayrollData createEmployeePayrollData(EmployeePayrollDTO employeePayrollDTO) {
         EmployeePayrollData empData = null;
         empData = new EmployeePayrollData(empPayrollList.size()+1,employeePayrollDTO);
+        log.debug(empData.toString());
     empPayrollList.add(empData);
-        return empData;
+        return employeePayrollRepository.save(empData);
  }
 @Override
     public EmployeePayrollData updateEmployeePayrollData(int empId, EmployeePayrollDTO employeePayrollDTO) {
@@ -41,6 +46,6 @@ public class EmployeePayrollService implements IEmployeePayrollService {
 }
  @Override
     public void deleteEmployeePayrollDTO(int empId) {
-     empPayrollList.remove(empId - 1);
+     employeePayrollRepository.deleteById(empId - 1);
     }
 }
