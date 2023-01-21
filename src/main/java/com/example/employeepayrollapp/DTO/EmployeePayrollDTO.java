@@ -2,25 +2,32 @@ package com.example.employeepayrollapp.DTO;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.*;
 import lombok.Data;
-import lombok.ToString;
+import java.util.List;
 
-public @ToString class EmployeePayrollDTO {
-    @Pattern(regexp = "^[A-Z]{1}[a-zA-Z\\s]{2,}$", message = "Invalid Employee Name")
-    public String name;
-    @Pattern(regexp = "^(male|female)$", message = "Invalid Employee Name")
-    public String gender;
-    @Min(value = 500,message = "Minimum wage should be more than 500")
-    public long salary;
-    @NotBlank(message = "Imagepath cannot be empty")
-    public String imagePath;
+@Data
+public class EmployeePayrollDTO {
+    @Pattern(regexp = "^[A-Z]{1}[a-zA-Z\\s]{2,}$", message = "Employee name Invalid")
+    @NotEmpty(message = "Employee Name should not be Null")
+    private String name;
 
-    @JsonFormat(pattern = "dd-MM-yyyy")
-    @NotNull(message = "start date should not be empty")
-    public String startDate;
-    @NotBlank(message = "Note cannot be empty")
-    public String notes;
-    @NotBlank(message = "Department cannot be empty")
-    public String department;
-    public int employeeId;
+    @Min(value = 500,message = "Wage should be 500 or More")
+    @Max(value = 999999,message = "Wage should not exceeds 999999")
+    private long salary;
+
+    @Pattern(regexp = "male|female",message = "Gender Needs to be Male or Female")
+    private String gender;
+
+   // @Pattern(regexp = "dd-MM-yyyy")
+    @NotNull(message = "Start Date Should not be Empty")
+    private String startDate;
+
+    @NotBlank(message = "Note Should not be empty")
+    private String note;
+
+    @NotBlank(message = "Profile Pic should not be Empty")
+    private String imagePath;
+
+    @NotNull(message = "Department should not be Empty")
+    private List<String> department;
 
 }

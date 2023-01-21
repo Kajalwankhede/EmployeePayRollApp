@@ -2,36 +2,45 @@ package com.example.employeepayrollapp.Model;
 import com.example.employeepayrollapp.DTO.EmployeePayrollDTO;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
+
+@Data
+@NoArgsConstructor
 @Entity
-@Table(name = "employee_payroll")
-public @Data class EmployeePayrollData {
+@Table(name = "employee_payroll_data")
+public class EmployeePayrollData {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "employee_id")
     private int employeeId;
-    @Column(name = "Name")
-private String name;
- private String gender;
-private long salary;
-private String imagePath;
-private String startDate;
-private String notes;
-private String department;
-public EmployeePayrollData() {
+    @Column(name = "name")
+    private String name;
+    private long salary;
 
-}
-public EmployeePayrollData(int employeeId, EmployeePayrollDTO employeePayrollDTO) {
-     this.employeeId = employeeId;
-     this.name = employeePayrollDTO.name;
-     this.salary = employeePayrollDTO.salary;
-     this.imagePath = employeePayrollDTO.imagePath;
-     this.gender = employeePayrollDTO.gender;
-     this.department = employeePayrollDTO.department;
-     this.notes = employeePayrollDTO.notes;
- }
-@Override
-    public String toString() {
-        return "EmployeeRequestDao [name=" + name + ", gender=" + gender + ", salary=" + salary + ", imagePath="
-                + imagePath + ", startDate=" + startDate + ", notes=" + notes + ", department=" + department + "]";
+    private String gender;
+
+    private String startDate;
+
+    private String note;
+
+    private String imagePath;
+    @ElementCollection
+    @CollectionTable(name = "employee_department",joinColumns = @JoinColumn(name = "id"))
+    @Column(name = "department")
+    private List<String> department;
+
+    public EmployeePayrollData( EmployeePayrollDTO employeePayrollDTO) {
+        this.updateEmployeeEmployeePayrollData(employeePayrollDTO);
+    }
+ public void updateEmployeeEmployeePayrollData(EmployeePayrollDTO employeePayrollDTO) {
+        this.name = employeePayrollDTO.getName();
+        this.salary = employeePayrollDTO.getSalary();
+        this.gender = employeePayrollDTO.getGender();
+        this.startDate = employeePayrollDTO.getStartDate();
+        this.note = employeePayrollDTO.getNote();
+        this.imagePath = employeePayrollDTO.getImagePath();
+        this.department = employeePayrollDTO.getDepartment();
     }
 }
