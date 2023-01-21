@@ -1910,3 +1910,32 @@ java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child 
 2023-01-21T16:46:40.628+05:30  INFO 10036 --- [restartedMain] c.e.e.EmployeePayRollAppApplication      : Started EmployeePayRollAppApplication in 35.758 seconds (process running for 41.249)
 2023-01-21T16:46:40.633+05:30  INFO 10036 --- [restartedMain] c.e.e.EmployeePayRollAppApplication      : Employee Payroll App started in DEV Environment
 2023-01-21T16:46:40.636+05:30  INFO 10036 --- [restartedMain] c.e.e.EmployeePayRollAppApplication      : Employee payroll DB user is root
+2023-01-21T17:27:40.361+05:30  INFO 9228 --- [restartedMain] c.e.e.EmployeePayRollAppApplication      : Starting EmployeePayRollAppApplication using Java 19.0.1 with PID 9228 (C:\Users\hp\IdeaProjects\CFP SESSION ASSIGNMENT\EmployeePayRollApp\target\classes started by hp in C:\Users\hp\IdeaProjects\CFP SESSION ASSIGNMENT\EmployeePayRollApp)
+2023-01-21T17:27:40.439+05:30 DEBUG 9228 --- [restartedMain] c.e.e.EmployeePayRollAppApplication      : Running with Spring Boot v3.0.1, Spring v6.0.3
+2023-01-21T17:27:40.442+05:30  INFO 9228 --- [restartedMain] c.e.e.EmployeePayRollAppApplication      : The following 1 profile is active: "DEV"
+2023-01-21T17:28:05.595+05:30  WARN 9228 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-21T17:28:07.335+05:30  INFO 9228 --- [restartedMain] c.e.e.EmployeePayRollAppApplication      : Started EmployeePayRollAppApplication in 28.817 seconds (process running for 38.731)
+2023-01-21T17:28:07.340+05:30  INFO 9228 --- [restartedMain] c.e.e.EmployeePayRollAppApplication      : Employee Payroll App started in DEV Environment
+2023-01-21T17:28:07.343+05:30  INFO 9228 --- [restartedMain] c.e.e.EmployeePayRollAppApplication      : Employee payroll DB user is root
+2023-01-21T17:27:40.361+05:30  INFO 9228 --- [restartedMain] c.e.e.EmployeePayRollAppApplication      : Starting EmployeePayRollAppApplication using Java 19.0.1 with PID 9228 (C:\Users\hp\IdeaProjects\CFP SESSION ASSIGNMENT\EmployeePayRollApp\target\classes started by hp in C:\Users\hp\IdeaProjects\CFP SESSION ASSIGNMENT\EmployeePayRollApp)
+2023-01-21T17:27:40.439+05:30 DEBUG 9228 --- [restartedMain] c.e.e.EmployeePayRollAppApplication      : Running with Spring Boot v3.0.1, Spring v6.0.3
+2023-01-21T17:27:40.442+05:30  INFO 9228 --- [restartedMain] c.e.e.EmployeePayRollAppApplication      : The following 1 profile is active: "DEV"
+2023-01-21T17:28:05.595+05:30  WARN 9228 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-21T17:28:07.335+05:30  INFO 9228 --- [restartedMain] c.e.e.EmployeePayRollAppApplication      : Started EmployeePayRollAppApplication in 28.817 seconds (process running for 38.731)
+2023-01-21T17:28:07.340+05:30  INFO 9228 --- [restartedMain] c.e.e.EmployeePayRollAppApplication      : Employee Payroll App started in DEV Environment
+2023-01-21T17:28:07.343+05:30  INFO 9228 --- [restartedMain] c.e.e.EmployeePayRollAppApplication      : Employee payroll DB user is root
+2023-01-21T17:57:58.597+05:30  WARN 9228 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=58s326ms145µs).
+2023-01-21T19:16:26.070+05:30  INFO 9988 --- [restartedMain] c.e.e.EmployeePayRollAppApplication      : Starting EmployeePayRollAppApplication using Java 19.0.1 with PID 9988 (C:\Users\hp\IdeaProjects\CFP SESSION ASSIGNMENT\EmployeePayRollApp\target\classes started by hp in C:\Users\hp\IdeaProjects\CFP SESSION ASSIGNMENT\EmployeePayRollApp)
+2023-01-21T19:16:26.451+05:30 DEBUG 9988 --- [restartedMain] c.e.e.EmployeePayRollAppApplication      : Running with Spring Boot v3.0.1, Spring v6.0.3
+2023-01-21T19:16:26.453+05:30  INFO 9988 --- [restartedMain] c.e.e.EmployeePayRollAppApplication      : The following 1 profile is active: "DEV"
+2023-01-21T19:17:27.471+05:30  WARN 9988 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-21T19:17:29.349+05:30  INFO 9988 --- [restartedMain] c.e.e.EmployeePayRollAppApplication      : Started EmployeePayRollAppApplication in 71.155 seconds (process running for 97.149)
+2023-01-21T19:17:29.354+05:30  INFO 9988 --- [restartedMain] c.e.e.EmployeePayRollAppApplication      : Employee Payroll App started in DEV Environment
+2023-01-21T19:17:29.357+05:30  INFO 9988 --- [restartedMain] c.e.e.EmployeePayRollAppApplication      : Employee payroll DB user is root
+2023-01-21T19:43:53.581+05:30  INFO 3916 --- [restartedMain] c.e.e.EmployeePayRollAppApplication      : Starting EmployeePayRollAppApplication using Java 19.0.1 with PID 3916 (C:\Users\hp\IdeaProjects\CFP SESSION ASSIGNMENT\EmployeePayRollApp\target\classes started by hp in C:\Users\hp\IdeaProjects\CFP SESSION ASSIGNMENT\EmployeePayRollApp)
+2023-01-21T19:43:53.673+05:30 DEBUG 3916 --- [restartedMain] c.e.e.EmployeePayRollAppApplication      : Running with Spring Boot v3.0.1, Spring v6.0.3
+2023-01-21T19:43:53.674+05:30  INFO 3916 --- [restartedMain] c.e.e.EmployeePayRollAppApplication      : The following 1 profile is active: "DEV"
+2023-01-21T19:45:24.328+05:30  WARN 3916 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-21T19:45:31.263+05:30  INFO 3916 --- [restartedMain] c.e.e.EmployeePayRollAppApplication      : Started EmployeePayRollAppApplication in 104.059 seconds (process running for 141.609)
+2023-01-21T19:45:31.270+05:30  INFO 3916 --- [restartedMain] c.e.e.EmployeePayRollAppApplication      : Employee Payroll App started in DEV Environment
+2023-01-21T19:45:31.273+05:30  INFO 3916 --- [restartedMain] c.e.e.EmployeePayRollAppApplication      : Employee payroll DB user is root

@@ -20,6 +20,8 @@ public class EmployeePayrollService implements IEmployeePayrollService {
     public List<EmployeePayrollData> getEmployeePayrollData() {
         return employeePayrollRepository.findAll();
 }
+
+//Getting Employee Data by id
  @Override
     public EmployeePayrollData getEmployeePayrollDataById(int empId) {
         return employeePayrollRepository.findById(empId)
@@ -34,6 +36,7 @@ public class EmployeePayrollService implements IEmployeePayrollService {
         return employeePayrollRepository.save(employeePayrollData);
     }
 
+    //Updating employee data by id
  @Override
     public EmployeePayrollData updateEmployeePayrollData(int empId, EmployeePayrollDTO employeePayrollDTO) {
         EmployeePayrollData empData = this.getEmployeePayrollDataById(empId);
@@ -42,12 +45,14 @@ public class EmployeePayrollService implements IEmployeePayrollService {
 
 }
 
+//Deleting employee data by employee id
  @Override
     public void deleteEmployeePayrollDTO(int empId) {
         EmployeePayrollData empData = this.getEmployeePayrollDataById(empId);
         employeePayrollRepository.delete(empData);
  }
 
+ //getting employee data by department
 @Override
     public List<EmployeePayrollData> getEmployeePayrollByDepartment(String department) {
         return employeePayrollRepository.findEmployeesByDepartment(department);
